@@ -7,4 +7,80 @@
  
   HERE WE CAN TRANSLATE EVERY WORD FROM ENGLISH TO ARABIC
 */
-"oboardText1" = "اعد تدوير نفايتك";
+
+
+
+// SHAKIAH -  working copy - things to do
+/**
+ translate and do the following
+ 1) log in and sign up view
+ 2) profile view
+ 3) about us
+ 4) delete your account
+ */
+
+
+
+// general buttons
+"back" = "رجوع";
+"next" = "التالي";
+
+
+
+// tab bar(no need for now)
+
+
+
+
+
+
+
+// on boarding view
+
+"oboardText1" = "اعادة تدوير النفايات";
+"onboardText2" = "اكسب نقاط بسهوله";
+"onboardText3" = "اعد تدوير منتجاتك بسهوله";
+"onboardDescription1" = "بسهولة وسرعة، بضغطة زر واحدة، سنهتم بجمع نفاياتك!";
+"onboardDescription2" = "   اكسب نقاط وهدايا من خلال اعادة تدوير نفايتك";
+"onboardDescription3" = "سهلنا عليك اعادة التدوير";
+
+// request pick up
+"requestPickUp" =  "اطلب";
+"glass" = "زجاج";
+"plastic" = "بلاستيك";
+"paper" = "ورق";
+"electronical" = "الكترونيات";
+"kg" = "كيلوجرام";
+
+
+// address
+
+"savedAddress" = "العناوين المحفوظه";
+"block" = "القطعة";
+"streetNo" = "الشارع";
+"homeNo" = "المنزل";
+"phoneNo" = "رقم الهاتف";
+
+
+//complete
+"points" = "نقاط";
+
+"congratulation" = "مبروك";
+"congDesc" = "لقد كسبت نقاطا جديدة ";
+"addPoints" = "اضف النقاط";
+
+// log in and sign up view
+
+
+
+
+
+//profile view
+
+
+
+// about us
+
+
+
+// delete your account
