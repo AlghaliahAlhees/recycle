@@ -9,7 +9,17 @@ import SwiftUI
 
 struct RewardScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            Text("reward view ")
+//            Spacer()
+            
+            
+//            CustomTabBar(selectedTabs: .constant(.reward))
+            
+        }
+        
+        
     }
 }
 

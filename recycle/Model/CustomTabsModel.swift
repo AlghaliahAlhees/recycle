@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum Tabs  {
+    case profile
+    case reward
+    case feeds
+    case leaderboard
+    
+}
