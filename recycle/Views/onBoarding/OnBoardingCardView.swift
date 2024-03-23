@@ -1,0 +1,106 @@
+//
+//  OnBoardingView.swift
+//  recycle
+//
+//  Created by Alghalya Alhees on 23/03/2024.
+//
+
+import SwiftUI
+
+struct OnBoardingCardView: View {
+    
+    // MARK: - Properties
+    let image: String
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
+    let showDismissButton: Bool
+//    @Binding var showOnBoarding : Bool
+    let index : Int
+    let next: LocalizedStringKey =  "next"
+    @Binding var shouldDisplayOnBoarding : Bool
+
+    
+    //MARK: Body
+    
+    var body: some View {
+        VStack{ //Start: VSatck
+            
+            Image(image)
+                .resizable()
+                .frame(height: 350)
+            //                .scaledToFill()
+            VStack{ //Start: VStack
+                HStack{ //Start: HStack
+                    Text(title)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.system(size: 32))
+                        .bold()
+                    Spacer()
+                    
+                }//End: HStack
+             
+                HStack{ //Start: HStack
+                    Text(description)
+                        .font(.callout)
+                        .font(.system(size: 22))
+
+                    Spacer()
+                } //End: HStack
+                .padding(.top, 10)
+            }//End: VStack
+            .padding()
+            
+            Spacer()
+            
+            
+            
+            
+            
+            
+            if showDismissButton{
+                
+                Button{
+                    shouldDisplayOnBoarding.toggle()
+
+                }label: {
+                    Text("next")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 320,height: 24)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+            }
+             Spacer()
+            
+            
+            HStack{
+                ForEach (0..<3, id: \.self){ i in
+                    HStack{ //Start: HStack
+                        if i == index {
+                            ZStack { //Start: Zstack
+                                Color.green
+                                
+                            } //End: ZStack
+                            }else{
+                            ZStack { //Start: Zstack
+                                Color.gray
+                                
+                            }//End: ZStack
+                        }//End: else
+                        
+                    }//End: HStack
+                    .frame(width: 60,height: 15)
+                    
+                } //End: forEach
+            }//End: HStack
+          
+            
+        } //End: VStack
+    }
+}
+
+#Preview {
+    OnBoardingCardView(image: "gift", title: "earn points", description: "here you can earn rewards for recycling ", showDismissButton: true, index: 0, shouldDisplayOnBoarding: .constant(true))
+}

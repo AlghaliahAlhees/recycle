@@ -11,15 +11,14 @@ struct ContentView: View {
     // an example of how to localize a text 
     let text1: LocalizedStringKey =  "oboardText1"
     @State var selectedTabs : Tabs = .profile
-
+    @AppStorage("shouldDisplayOnBoarding")  var shouldDisplayOnBoarding : Bool = true
     var body: some View {
         
         VStack {
             
-//            Text(text1)
-
+//OnBorards()
             //MARK: Custom tabView
-            
+//            
             if selectedTabs == .profile{
                 ProfileScreen()
             }
@@ -36,6 +35,9 @@ struct ContentView: View {
 
         }
         .padding()
+        .fullScreenCover(isPresented: $shouldDisplayOnBoarding, content: {
+            OnBoardingViews(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
+        })
     }
 }
 
