@@ -10,11 +10,11 @@ import SwiftUI
 struct OnBoardingCardView: View {
     
     // MARK: - Properties
+    
     let image: String
     let title: LocalizedStringKey
     let description: LocalizedStringKey
     let showDismissButton: Bool
-//    @Binding var showOnBoarding : Bool
     let index : Int
     let next: LocalizedStringKey =  "next"
     @Binding var shouldDisplayOnBoarding : Bool
@@ -28,7 +28,7 @@ struct OnBoardingCardView: View {
             Image(image)
                 .resizable()
                 .frame(height: 350)
-            //                .scaledToFill()
+
             VStack{ //Start: VStack
                 HStack{ //Start: HStack
                     Text(title)
@@ -95,6 +95,7 @@ struct OnBoardingCardView: View {
                     
                 } //End: forEach
             }//End: HStack
+            .padding()
           
             
         } //End: VStack

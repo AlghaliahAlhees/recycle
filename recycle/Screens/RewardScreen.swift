@@ -8,17 +8,46 @@
 import SwiftUI
 
 struct RewardScreen: View {
+    
+    // MARK: - Properties
+
+   
+    
+    //MARK: Body
+
+    
     var body: some View {
         VStack{
             
-            Text("reward view ")
-//            Spacer()
             
+            //MARK: - navigation bar
+            HStack(alignment: .center){ //Start: Hstack
+                //Spacer()
+                Text("rewards")
+                    .bold()
+                    .font(.system(size: 24))
+                Spacer()
+                
+                HStack{ //Start: Hstack
+                    Image("token")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    VStack(alignment: .center){
+                        Text("1000")
+                            .bold()
+                        Text("point")
+                        
+                    }
+                    .font(.caption)
+                    
+                } //End: HStack
+            } //End: HStack
+            .padding()
             
-//            CustomTabBar(selectedTabs: .constant(.reward))
+            //MARK: - rewards view
+             RewardsView()
             
-        }
-        
+        } //End: VStack
         
     }
 }

@@ -7,69 +7,81 @@
 
 import SwiftUI
 
+enum FocusedField {
+    case email
+    case password
+}
+
 struct logInScreen: View {
     
     // MARK: - Properties
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var email: String = ""
-    @State private var wrongUsername: Int = 0
-    @State private var wrongPassword: Int = 0
-    @State private var wrongEmail:Int = 0
-    @State private var showingLoginScreen: String = ""
+    
+    @State private var emailText: String = ""
+    @State private var passwordText: String = ""
+    @State private var isValidEmail: Bool = true
+    @State private var isValidPassword: Bool = true
+    @FocusState private var focusedField: FocusedField?
+     
     
     //MARK: Body
     
-    
-    // Shaikah - working copy - things to do
-    //1) no need for ( username / wrongUsername / wrongPassword ) in this
-    //2) add button for Sign up
-    //3) add button for dont have an account
-    
-    
-
-
     var body: some View {
-        
-        ZStack { //Start: ZStack
-            
-            VStack { //Start: VStack
-                
-                Text("Login")
-                    .font(.largeTitle)
-                    .bold()
+        NavigationStack {
+            VStack {
+                Text("Login to your account")
+                    .font(.system(size: 30, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.bottom)
+                TextField("Email", text: $emailText)
+                    .focused($focusedField, equals: .email)
                     .padding()
-                
-                
-                TextField("Username", text: $username)
+                    .background(Color.green.opacity(0.09))
+                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(focusedField == .email ? Color(.black): .gray, lineWidth: 3))
+                    .padding(.horizontal)
+                TextField("Password", text: $passwordText)
+                    .focused($focusedField, equals: .password)
                     .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.09))
-                    .cornerRadius(10)
-                    .border(.red, width: CGFloat(wrongUsername))
-                
-                TextField("Email", text: $email)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.09))
-                    .cornerRadius(10)
-                    .border(.red, width: CGFloat(wrongEmail))
-                
-                SecureField("Password", text: $password)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.09))
-                    .cornerRadius(10)
-                    .border(.red, width: CGFloat(wrongPassword))
-                
-                Button("forget password?"){ //Start: Button
-                } //End: Button
+                    .background(Color.green.opacity(0.09))
+                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(focusedField == .password ? Color(.black): .gray, lineWidth: 3))
+                    .padding(.horizontal)
+                    .onChange(of: emailText) { newValue in
+                        //                          isValidEmail = Validator.validateEmail(newValue)
+                    }
             }
+            HStack{
+                Spacer()
+                Button {
+                    //action
+                } label: {
+                    Text("Forgot your passowrd?")
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .font(.system( size: 14, weight: .semibold))
+                }
+                .padding(.trailing)
+            }
+            Button {
+                //action
+            } label: {
+                Text("Sign in")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.white)
+            }
+            .padding(.vertical)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .background(.green)
+            .cornerRadius(12)
+            .padding(.horizontal)
+            //                  .opacity(canProceed ? 1.0 : 0.5)
+            //                  .disabled(!canProceed)
         }
     }
 }
-
-
 
 
 

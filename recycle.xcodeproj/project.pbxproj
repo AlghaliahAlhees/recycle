@@ -28,6 +28,7 @@
 		F1A8C4202BA6270000977739 /* DeleteAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C41F2BA6270000977739 /* DeleteAccountScreen.swift */; };
 		F1B2D8612BAF39DB005B41AE /* OnBoardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8602BAF39DB005B41AE /* OnBoardingCardView.swift */; };
 		F1B2D8A32BAF44C0005B41AE /* OnBoardingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8A22BAF44C0005B41AE /* OnBoardingViews.swift */; };
+		F1B2D8A52BB0B36D005B41AE /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F1A8C41F2BA6270000977739 /* DeleteAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountScreen.swift; sourceTree = "<group>"; };
 		F1B2D8602BAF39DB005B41AE /* OnBoardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCardView.swift; sourceTree = "<group>"; };
 		F1B2D8A22BAF44C0005B41AE /* OnBoardingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViews.swift; sourceTree = "<group>"; };
+		F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		F1A8C4042BA613B800977739 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1B2D8A62BB0B376005B41AE /* Rewards */,
 				F1B2D85F2BAF397E005B41AE /* onBoarding */,
 				F11544682BA9FD6000BE0C66 /* Custom Tab Bar */,
 			);
@@ -167,6 +170,14 @@
 				F1B2D8A22BAF44C0005B41AE /* OnBoardingViews.swift */,
 			);
 			path = onBoarding;
+			sourceTree = "<group>";
+		};
+		F1B2D8A62BB0B376005B41AE /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */,
+			);
+			path = Rewards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				F115446C2BA9FF3200BE0C66 /* CustomTabBar.swift in Sources */,
 				F1A8C4142BA6269400977739 /* RewardScreen.swift in Sources */,
 				F115446A2BA9FD7500BE0C66 /* TabBarButton.swift in Sources */,
+				F1B2D8A52BB0B36D005B41AE /* RewardsView.swift in Sources */,
 				F1A8C41A2BA626CF00977739 /* CompleteScreen.swift in Sources */,
 				F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */,
 				F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */,
@@ -415,6 +427,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,6 +457,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

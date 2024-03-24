@@ -20,7 +20,7 @@ struct ContentView: View {
             //MARK: Custom tabView
 //            
             if selectedTabs == .profile{
-                ProfileScreen()
+                logInScreen()
             }
             if selectedTabs == .feeds{
                 FeedScreen()
