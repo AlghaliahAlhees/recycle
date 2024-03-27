@@ -31,6 +31,12 @@ struct ContentView: View {
             if selectedTabs == .reward{
                 RewardScreen()
             }
+            if selectedTabs == .leaderboard{
+                RecycleInfoView()
+            }
+            
+            
+            
                         Spacer()
 
             CustomTabBar(selectedTabs:  $selectedTabs)

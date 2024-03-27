@@ -22,7 +22,7 @@ struct RewardScreen: View {
             
 //            //MARK: - navigation bar
             HStack(alignment: .center){ //Start: Hstack
-                 CustomNavigationBar(customTitle: "reward", EnableDissmiss: true)
+                 CustomNavigationBar(customTitle: "reward", EnableDissmiss: false)
                 
                 HStack{ //Start: Hstack
                     

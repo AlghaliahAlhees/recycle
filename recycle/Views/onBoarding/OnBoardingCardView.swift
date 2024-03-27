@@ -27,6 +27,7 @@ struct OnBoardingCardView: View {
             
             Image(image)
                 .resizable()
+                .scaledToFit()
                 .frame(height: 350)
 
             VStack{ //Start: VStack
