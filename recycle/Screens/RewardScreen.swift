@@ -20,15 +20,13 @@ struct RewardScreen: View {
         VStack{
             
             
-            //MARK: - navigation bar
+//            //MARK: - navigation bar
             HStack(alignment: .center){ //Start: Hstack
-                //Spacer()
-                Text("rewards")
-                    .bold()
-                    .font(.system(size: 24))
-                Spacer()
+                 CustomNavigationBar(customTitle: "reward", EnableDissmiss: true)
                 
                 HStack{ //Start: Hstack
+                    
+                    
                     Image("token")
                         .resizable()
                         .frame(width: 30, height: 30)

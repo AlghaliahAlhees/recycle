@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    // an example of how to localize a text 
-    let text1: LocalizedStringKey =  "oboardText1"
+    
+    // MARK: - Properties
+
     @State var selectedTabs : Tabs = .profile
     @AppStorage("shouldDisplayOnBoarding")  var shouldDisplayOnBoarding : Bool = true
+    //MARK: Body
+
     var body: some View {
         
         VStack {
             
-//OnBorards()
             //MARK: Custom tabView
-//            
+            
             if selectedTabs == .profile{
                 logInScreen()
             }

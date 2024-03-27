@@ -10,6 +10,9 @@
 		F115446A2BA9FD7500BE0C66 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11544692BA9FD7500BE0C66 /* TabBarButton.swift */; };
 		F115446C2BA9FF3200BE0C66 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */; };
 		F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */; };
+		F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */; };
+		F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */; };
+		F17DD4AB2BB47A6B00CF7871 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4AA2BB47A6B00CF7871 /* CustomNavigationBar.swift */; };
 		F18E29412BA766B700565D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F18E29402BA766B600565D71 /* GoogleService-Info.plist */; };
 		F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F42BA6137C00977739 /* recycleApp.swift */; };
 		F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F62BA6137C00977739 /* ContentView.swift */; };
@@ -35,6 +38,9 @@
 		F11544692BA9FD7500BE0C66 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabsModel.swift; sourceTree = "<group>"; };
+		F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeConstants.swift; sourceTree = "<group>"; };
+		F17DD4AA2BB47A6B00CF7871 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		F18E29402BA766B600565D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1A8C3F12BA6137C00977739 /* recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A8C3F42BA6137C00977739 /* recycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recycleApp.swift; sourceTree = "<group>"; };
@@ -77,6 +83,14 @@
 				F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */,
 			);
 			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
+		F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				F17DD4AA2BB47A6B00CF7871 /* CustomNavigationBar.swift */,
+			);
+			path = "Custom Navigation Bar";
 			sourceTree = "<group>";
 		};
 		F1A8C3E82BA6137C00977739 = {
@@ -132,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */,
+				F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */,
+				F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 		F1A8C4042BA613B800977739 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */,
 				F1B2D8A62BB0B376005B41AE /* Rewards */,
 				F1B2D85F2BAF397E005B41AE /* onBoarding */,
 				F11544682BA9FD6000BE0C66 /* Custom Tab Bar */,
@@ -264,9 +281,12 @@
 				F1A8C4142BA6269400977739 /* RewardScreen.swift in Sources */,
 				F115446A2BA9FD7500BE0C66 /* TabBarButton.swift in Sources */,
 				F1B2D8A52BB0B36D005B41AE /* RewardsView.swift in Sources */,
+				F17DD4AB2BB47A6B00CF7871 /* CustomNavigationBar.swift in Sources */,
 				F1A8C41A2BA626CF00977739 /* CompleteScreen.swift in Sources */,
+				F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */,
 				F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */,
 				F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */,
+				F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */,
 				F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
 				F1A8C4162BA626A700977739 /* FeedScreen.swift in Sources */,

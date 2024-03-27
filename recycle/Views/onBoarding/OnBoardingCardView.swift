@@ -16,7 +16,7 @@ struct OnBoardingCardView: View {
     let description: LocalizedStringKey
     let showDismissButton: Bool
     let index : Int
-    let next: LocalizedStringKey =  "next"
+//    let next: LocalizedStringKey =  "next"
     @Binding var shouldDisplayOnBoarding : Bool
 
     
@@ -30,6 +30,7 @@ struct OnBoardingCardView: View {
                 .frame(height: 350)
 
             VStack{ //Start: VStack
+                
                 HStack{ //Start: HStack
                     Text(title)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -53,17 +54,13 @@ struct OnBoardingCardView: View {
             Spacer()
             
             
-            
-            
-            
-            
             if showDismissButton{
                 
                 Button{
                     shouldDisplayOnBoarding.toggle()
 
                 }label: {
-                    Text("next")
+                    Text(next)
                         .foregroundColor(.white)
                         .bold()
                         .frame(width: 320,height: 24)

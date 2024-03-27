@@ -17,25 +17,7 @@ struct OrderScreen: View {
         VStack{ //Start: VStack
             
             //MARK: - navigation bar
-            HStack{ //Start: Hstack
-                
-                Button{
-                    // go back
-                    goBack.toggle()
-                }label: {
-                    
-                    Image(systemName: "arrow.left")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundStyle(Color.black)
-                }
-                Spacer()
-                Text("request pickup")
-                    .bold()
-                Spacer()
-            } //End: HStack
-            .padding()
-            
+            CustomNavigationBar(customTitle: requestPickUp , EnableDissmiss: true)
             
             //MARK: - choose categorie
             
@@ -44,9 +26,7 @@ struct OrderScreen: View {
             Spacer()
             
         }//End:Vstack
-        .fullScreenCover(isPresented: $goBack, content: {
-            ContentView()
-        })
+        
     }
 }
 
