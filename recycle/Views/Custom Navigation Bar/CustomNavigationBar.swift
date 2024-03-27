@@ -24,10 +24,8 @@ struct CustomNavigationBar: View {
                     Image(systemName: "xmark")
                         .font(Font.body.bold())
                         .foregroundColor(.black)
-                        .padding()
                 }//label
-                .padding(.top)
-                .padding(.trailing)
+//
             }//if enable
             
             
@@ -39,6 +37,7 @@ struct CustomNavigationBar: View {
             
         } //End: HStack
         .padding(.bottom, 10)
+        .padding()
         
         
     }
