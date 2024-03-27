@@ -21,7 +21,7 @@ struct CustomNavigationBar: View {
                 Button {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Image(systemName: "arrow.left")
+                    Image(systemName: "xmark")
                         .font(Font.body.bold())
                         .foregroundColor(.black)
                         .padding()

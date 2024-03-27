@@ -9,12 +9,7 @@ import SwiftUI
 
 struct OnBoardingViews: View {
     // MARK: - Properties
-//    let title1: LocalizedStringKey =  "oboardText1"
-//    let title2: LocalizedStringKey =  "onboardText2"
-//    let title3: LocalizedStringKey =  "onboardText3"
-//    let Descrption1: LocalizedStringKey =  "onboardDescription1"
-//    let Descrption2: LocalizedStringKey =  "onboardDescription2"
-//    let Descrption3: LocalizedStringKey =  "onboardDescription3"
+
     @Binding var shouldDisplayOnBoarding : Bool
     
     //MARK: Body

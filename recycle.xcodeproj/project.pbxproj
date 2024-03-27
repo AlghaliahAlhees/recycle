@@ -17,6 +17,7 @@
 		F17DD4AF2BB4832C00CF7871 /* RecycleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */; };
 		F17DD4B22BB483EC00CF7871 /* RecycleInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4B12BB483EC00CF7871 /* RecycleInfoCardView.swift */; };
 		F17DD4B42BB48DC800CF7871 /* RecycleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4B32BB48DC800CF7871 /* RecycleInfoView.swift */; };
+		F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */; };
 		F18E29412BA766B700565D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F18E29402BA766B600565D71 /* GoogleService-Info.plist */; };
 		F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F42BA6137C00977739 /* recycleApp.swift */; };
 		F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F62BA6137C00977739 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 		F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoModel.swift; sourceTree = "<group>"; };
 		F17DD4B12BB483EC00CF7871 /* RecycleInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoCardView.swift; sourceTree = "<group>"; };
 		F17DD4B32BB48DC800CF7871 /* RecycleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoView.swift; sourceTree = "<group>"; };
+		F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCardView.swift; sourceTree = "<group>"; };
 		F18E29402BA766B600565D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1A8C3F12BA6137C00977739 /* recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A8C3F42BA6137C00977739 /* recycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recycleApp.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 				F17DD4B12BB483EC00CF7871 /* RecycleInfoCardView.swift */,
 			);
 			path = "Recycle info ";
+			sourceTree = "<group>";
+		};
+		F17DD4B52BB4938B00CF7871 /* Custom Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */,
+			);
+			path = "Custom Alerts";
 			sourceTree = "<group>";
 		};
 		F1A8C3E82BA6137C00977739 = {
@@ -173,6 +183,7 @@
 		F1A8C4042BA613B800977739 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F17DD4B52BB4938B00CF7871 /* Custom Alerts */,
 				F17DD4B02BB483D800CF7871 /* Recycle info  */,
 				F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */,
 				F1B2D8A62BB0B376005B41AE /* Rewards */,
@@ -311,6 +322,7 @@
 				F17DD4B42BB48DC800CF7871 /* RecycleInfoView.swift in Sources */,
 				F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */,
 				F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */,
+				F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
 				F17DD4AD2BB4810F00CF7871 /* RewardsModel.swift in Sources */,
 				F1A8C4162BA626A700977739 /* FeedScreen.swift in Sources */,

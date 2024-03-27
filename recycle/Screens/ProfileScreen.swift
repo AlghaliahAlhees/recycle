@@ -14,9 +14,9 @@ struct ProfileScreen: View {
             Spacer()
             
             
-//            CustomTabBar(selectedTabs: .constant(.profile))
-            
-        }    }
+        }
+        
+    }
 }
 
 #Preview {
