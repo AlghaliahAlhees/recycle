@@ -12,6 +12,7 @@
 		F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */; };
 		F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */; };
 		F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */; };
+		F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17948F92BB64694006C0F43 /* FeedsModel.swift */; };
 		F17DD4AB2BB47A6B00CF7871 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4AA2BB47A6B00CF7871 /* CustomNavigationBar.swift */; };
 		F17DD4AD2BB4810F00CF7871 /* RewardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4AC2BB4810F00CF7871 /* RewardsModel.swift */; };
 		F17DD4AF2BB4832C00CF7871 /* RecycleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */; };
@@ -46,6 +47,7 @@
 		F17DD4EB2BB4ADCC00CF7871 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F17DD4EA2BB4ADCC00CF7871 /* FirebaseStorage */; };
 		F17DD4ED2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F17DD4EC2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community */; };
 		F17DD4EF2BB4AE7600CF7871 /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */; };
+		F17DD4F12BB4B6B400CF7871 /* PointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */; };
 		F18E29412BA766B700565D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F18E29402BA766B600565D71 /* GoogleService-Info.plist */; };
 		F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F42BA6137C00977739 /* recycleApp.swift */; };
 		F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F62BA6137C00977739 /* ContentView.swift */; };
@@ -73,6 +75,8 @@
 		F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabsModel.swift; sourceTree = "<group>"; };
 		F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeConstants.swift; sourceTree = "<group>"; };
+		F17948F92BB64694006C0F43 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
+		F17948FB2BB6491D006C0F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F17DD4AA2BB47A6B00CF7871 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		F17DD4AC2BB4810F00CF7871 /* RewardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsModel.swift; sourceTree = "<group>"; };
 		F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoModel.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		F17DD4B32BB48DC800CF7871 /* RecycleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoView.swift; sourceTree = "<group>"; };
 		F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCardView.swift; sourceTree = "<group>"; };
 		F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
+		F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsModel.swift; sourceTree = "<group>"; };
 		F18E29402BA766B600565D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1A8C3F12BA6137C00977739 /* recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A8C3F42BA6137C00977739 /* recycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recycleApp.swift; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 		F1A8C3F32BA6137C00977739 /* recycle */ = {
 			isa = PBXGroup;
 			children = (
+				F17948FB2BB6491D006C0F43 /* Info.plist */,
 				F1A8C40C2BA6260900977739 /* readme.md */,
 				F18E29402BA766B600565D71 /* GoogleService-Info.plist */,
 				F1A8C4052BA61A5B00977739 /* Screens */,
@@ -233,6 +239,8 @@
 				F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */,
 				F17DD4AC2BB4810F00CF7871 /* RewardsModel.swift */,
 				F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */,
+				F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */,
+				F17948F92BB64694006C0F43 /* FeedsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A8C4182BA626B900977739 /* OrderScreen.swift in Sources */,
+				F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */,
 				F1A8C41E2BA626E600977739 /* AboutUsScreen.swift in Sources */,
 				F115446C2BA9FF3200BE0C66 /* CustomTabBar.swift in Sources */,
 				F1A8C4142BA6269400977739 /* RewardScreen.swift in Sources */,
@@ -408,6 +417,7 @@
 				F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */,
 				F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
+				F17DD4F12BB4B6B400CF7871 /* PointsModel.swift in Sources */,
 				F17DD4AD2BB4810F00CF7871 /* RewardsModel.swift in Sources */,
 				F1A8C4162BA626A700977739 /* FeedScreen.swift in Sources */,
 				F17DD4EF2BB4AE7600CF7871 /* UserAccountManager.swift in Sources */,
@@ -565,6 +575,7 @@
 				DEVELOPMENT_TEAM = Q798B7356U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = recycle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -595,6 +606,7 @@
 				DEVELOPMENT_TEAM = Q798B7356U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = recycle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

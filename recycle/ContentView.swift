@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     // MARK: - Properties
-
+//    @ObservedObject var usermanagerVM = UserAccountManager()
+    
     @State var selectedTabs : Tabs = .profile
     @AppStorage("shouldDisplayOnBoarding")  var shouldDisplayOnBoarding : Bool = true
     //MARK: Body
@@ -47,6 +49,11 @@ struct ContentView: View {
             OnBoardingViews(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
         })
     }
+    
+    
+    
+    
+    
 }
 
 #Preview {

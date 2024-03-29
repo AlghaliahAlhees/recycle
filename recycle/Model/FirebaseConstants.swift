@@ -22,6 +22,10 @@ struct FirebaseConstants {
     static let pickUpRequest = "pickUpRequest"
     static let points = "points"
     static let rewards = "rewards"
+    static let feeds = "feeds"
+
+    static let feed = "feed"
+
 }
 
 

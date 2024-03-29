@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct FeedScreen: View {
+        @ObservedObject var usermanagerVM = UserAccountManager()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if !usermanagerVM.feeds.isEmpty{
+                Text(usermanagerVM.feeds[0].feed)
+            }
+            Button{
+                usermanagerVM.sendFeed()
+                
+            }label: {
+                Text("press me")
+            }.onAppear{
+                
+                usermanagerVM.fetchFeeds()
+        }
+        }
     }
 }
 
