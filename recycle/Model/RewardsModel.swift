@@ -25,3 +25,22 @@ struct rewardModel : Identifiable{
     }
     
 }
+
+
+
+struct reward : Identifiable{
+    var id = UUID()
+    let Image : String
+    let name : String
+    let points : Int
+//    let timestamp: Timestamp
+}
+
+
+var rewards: [reward] = [.init(Image: "puff", name: "puff", points: 100),
+                         .init(Image: "puff", name: "puff", points: 90),
+                         .init(Image: "puff", name: "puff", points: 10000),
+                         .init(Image: "puff", name: "puff", points: 10330),
+                         .init(Image: "puff", name: "puff", points: 10000)
+
+]

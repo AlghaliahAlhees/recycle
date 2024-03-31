@@ -11,30 +11,35 @@ struct RewardsView: View {
     // MARK: - Properties
 
     @State var addApdeptdColumn = [GridItem(.adaptive(minimum: 170 ))]
-    
+    @ObservedObject var usermanagerVM = UserAccountManager()
+    @State private var show = true
+
     //MARK: Body
+    // working copy - things to do
+    // 1) fix alert
+
 
     var body: some View {
         //MARK: -  rewards
         ScrollView(.vertical){
             LazyVGrid(columns: addApdeptdColumn, spacing: 20){
-                ForEach(0..<10, id: \.self){ reward in
+                ForEach(rewards){ reward in
                     VStack{ //Start: VStack
                         
                         // image
-                        Image("puff")
+                        Image(reward.Image)
                             .resizable()
                             .frame(width: 100, height: 100)
                         
                         
                         
                         // title
-                        Text("for 15,000 points")
+                        Text("for \(reward.points) points")
                             .foregroundStyle(Color.white)
                         
                         // button
                         Button{
-                            
+                            usermanagerVM.claimAReward(rewardPoints: reward.points, RewardTitle: reward.name)
                         }label: {
                             VStack{
                                 Text("claim")
@@ -61,6 +66,10 @@ struct RewardsView: View {
                 } //End: Vstack
                 .shadow(radius: 3)
             } //End: for each
+            if usermanagerVM.ifAccepted{
+                CustomAlertCardView(icon: "checkmark.circle", text: "reward has been claimd", detail: "congratulation you claimed your reward", gridentColor: .green, circleColor: .green, show: $show)
+                
+            }
         
     } //End: scroll   
 }

@@ -11,7 +11,8 @@ struct RewardScreen: View {
     
     // MARK: - Properties
 
-   
+    @ObservedObject var usermanagerVM = UserAccountManager()
+
     
     //MARK: Body
 
@@ -24,8 +25,11 @@ struct RewardScreen: View {
             HStack(alignment: .center){ //Start: Hstack
                  CustomNavigationBar(customTitle: "reward", EnableDissmiss: false)
                 
+                Button("add points"){
+                    usermanagerVM.AddUserPoints(points: 5000000)
+                }
                 HStack{ //Start: Hstack
-                    
+                     
                     
                     Image("token")
                         .resizable()

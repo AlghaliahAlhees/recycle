@@ -10,15 +10,13 @@ import SwiftUI
 struct OnBoardingCardView: View {
     
     // MARK: - Properties
-    
     let image: String
     let title: LocalizedStringKey
     let description: LocalizedStringKey
     let showDismissButton: Bool
     let index : Int
-//    let next: LocalizedStringKey =  "next"
     @Binding var shouldDisplayOnBoarding : Bool
-
+    @State var goToSignUp : Bool = false
     
     //MARK: Body
     
@@ -58,8 +56,11 @@ struct OnBoardingCardView: View {
             if showDismissButton{
                 
                 Button{
-                    shouldDisplayOnBoarding.toggle()
+//                    shouldDisplayOnBoarding.toggle()
 
+                    // go to sign up
+                    goToSignUp.toggle()
+                    
                 }label: {
                     Text(next)
                         .foregroundColor(.white)
@@ -97,6 +98,10 @@ struct OnBoardingCardView: View {
           
             
         } //End: VStack
+        .fullScreenCover(isPresented: $goToSignUp, content: {
+            SignUpScreen( shouldDisplayOnBoarding: $shouldDisplayOnBoarding, didCompleteLogInProcess: {})
+        })
+   
     }
 }
 

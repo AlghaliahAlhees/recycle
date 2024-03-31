@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 enum FocusedField {
     case email
     case password
@@ -16,76 +16,105 @@ struct logInScreen: View {
     
     // MARK: - Properties
     
-    @State private var emailText: String = ""
-    @State private var passwordText: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
     @State private var isValidEmail: Bool = true
     @State private var isValidPassword: Bool = true
     @FocusState private var focusedField: FocusedField?
-     
+    let didCompleteLogInProcess: () -> ()
+    @Binding var shouldDisplayOnBoarding : Bool
     
+    // Galia - working copy - things to do
+    //1) add alert
+    
+
     //MARK: Body
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Login to your account")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(.bottom)
-                TextField("Email", text: $emailText)
-                    .focused($focusedField, equals: .email)
-                    .padding()
-                    .background(Color.green.opacity(0.09))
-                    .cornerRadius(12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(focusedField == .email ? Color(.black): .gray, lineWidth: 3))
-                    .padding(.horizontal)
-                TextField("Password", text: $passwordText)
-                    .focused($focusedField, equals: .password)
-                    .padding()
-                    .background(Color.green.opacity(0.09))
-                    .cornerRadius(12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(focusedField == .password ? Color(.black): .gray, lineWidth: 3))
-                    .padding(.horizontal)
-                    .onChange(of: emailText) { newValue in
-                        //                          isValidEmail = Validator.validateEmail(newValue)
-                    }
-            }
+     
+        VStack{
             HStack{
-                Spacer()
-                Button {
-                    //action
-                } label: {
-                    Text("Forgot your passowrd?")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .font(.system( size: 14, weight: .semibold))
-                }
-                .padding(.trailing)
+                Text("Sign up")
+                    .font(.system(size: 40))
+                    .font(.title)
+                    .bold()
+            Spacer()
             }
-            Button {
-                //action
-            } label: {
-                Text("Sign in")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.white)
-            }
-            .padding(.vertical)
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-            .background(.green)
-            .cornerRadius(12)
+            .padding(.top, 100)
             .padding(.horizontal)
-            //                  .opacity(canProceed ? 1.0 : 0.5)
-            //                  .disabled(!canProceed)
+//
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            SecureField("Password", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Button {
+                if self.email != "" &&  self.password != "" {
+                    self.loginUser( email: email, password: password)
+                }
+            }label: {
+                Text("sign up")
+                    .foregroundColor(.white)
+                    .bold()
+                    .frame(width: 320,height: 24)
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(10)
+
+            }
+            
+            Button("already have an account?"){
+//                goToLogin.toggle()
+                
+            }.padding(3)
+            Spacer()
+                
+            
+        }
+//        .fullScreenCover(isPresented: $goToprofile , content: {
+//            ProfileScreen(shouldDisplayOnBoarding: <#Binding<Bool>#>)
+//        })
+//
+        
+        
+        
+    }
+    
+    
+    // MARK: - FUNCTIONS
+    
+    ///  Function ito log in into an already existed account using email
+    /// - Parameters:
+    ///   - username: username of the user
+    ///   - email: email of the user
+    ///   - password: password of the user
+//    / - Returns: return True if user logged in
+    private func loginUser(email: String, password: String) {
+        
+        Firebase.Auth.auth().signIn(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("Failed to login user:", err)
+                return
+            }
+            print("Successfully logged in as user: \(result?.user.uid ?? "")")
+//            goToprofile.toggle()
+            shouldDisplayOnBoarding.toggle()
+
+            
         }
     }
+    
+    
+    
+    
 }
 
 
 
 
 #Preview {
-    logInScreen()
+    logInScreen(didCompleteLogInProcess: {}, shouldDisplayOnBoarding: .constant(false))
 }

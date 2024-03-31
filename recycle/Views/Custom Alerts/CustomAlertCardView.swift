@@ -15,7 +15,6 @@ struct CustomAlertCardView: View {
     var gridentColor: Color
     var circleColor: Color
     @Binding var show: Bool
-    
     @State var animateCircle: Bool = false
     //MARK: Body
     
@@ -66,7 +65,7 @@ struct CustomAlertCardView: View {
             
             .onChange(of: show) { newValue in
                 if newValue {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) { withAnimation {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { withAnimation {
                         show = false
                     }
                     }

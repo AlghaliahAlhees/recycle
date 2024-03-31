@@ -11,7 +11,7 @@ import Firebase
 struct ContentView: View {
     
     // MARK: - Properties
-//    @ObservedObject var usermanagerVM = UserAccountManager()
+    @ObservedObject var usermanagerVM = UserAccountManager()
     
     @State var selectedTabs : Tabs = .profile
     @AppStorage("shouldDisplayOnBoarding")  var shouldDisplayOnBoarding : Bool = true
@@ -20,35 +20,36 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
+           
+                //MARK: Custom tabView
+                
+                if selectedTabs == .profile{
+                    ProfileScreen(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
+                }
+                if selectedTabs == .feeds{
+                    FeedScreen()
+                }
+                
+                if selectedTabs == .reward{
+                    RewardScreen()
+                }
+                if selectedTabs == .leaderboard{
+                    RecycleInfoView()
+                }
+                
+                
             
-            //MARK: Custom tabView
-            
-            if selectedTabs == .profile{
-                logInScreen()
+                Spacer()
+                
+                CustomTabBar(selectedTabs:  $selectedTabs)
+                
             }
-            if selectedTabs == .feeds{
-                FeedScreen()
-            }
-            
-            if selectedTabs == .reward{
-                RewardScreen()
-            }
-            if selectedTabs == .leaderboard{
-                RecycleInfoView()
-            }
-            
-            
-            
-                        Spacer()
-
-            CustomTabBar(selectedTabs:  $selectedTabs)
-
+                .padding()
+                .fullScreenCover(isPresented: $shouldDisplayOnBoarding, content: {
+                    OnBoardingViews(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
+                })
         }
-        .padding()
-        .fullScreenCover(isPresented: $shouldDisplayOnBoarding, content: {
-            OnBoardingViews(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
-        })
-    }
+    
     
     
     
