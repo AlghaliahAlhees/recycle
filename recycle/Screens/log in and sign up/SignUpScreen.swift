@@ -14,18 +14,19 @@ struct SignUpScreen: View {
     @State private var password: String  = ""
     @State private var username: String  = ""
     @State private var goToLogin: Bool  = false
+    @State private var errorMessage: String  = ""
 
-    
     @ObservedObject var usermanagerVM = UserAccountManager()
     @Binding var shouldDisplayOnBoarding : Bool
     @State private var show = true
     let didCompleteLogInProcess: () -> ()
-
+    @FocusState private var focusedField: FocusedField?
+    
     //MARK: Body
     // Galia - working copy - things to do
-    //1) fix alert 
+    //1) fix alert
     
-
+    
     
     var body: some View {
         VStack{
@@ -34,25 +35,84 @@ struct SignUpScreen: View {
                     .font(.system(size: 40))
                     .font(.title)
                     .bold()
-            Spacer()
+                Spacer()
             }
             .padding(.top, 100)
             .padding(.horizontal)
-//            Spacer()
-            TextField("Username", text: $username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            //            Spacer()
             
-            SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            Text(errorMessage)
+                .foregroundStyle(.red)
+                .padding(3)
+            
+            VStack {
+                
+                HStack {
+                    Text("username")
+                        .bold()
+                    Spacer()
+                }
+                
+                .padding(.horizontal,8)
+                TextField("Username", text: $username)
+                    .focused($focusedField, equals: .username)
+                    .padding()
+                    .background(Color.green.opacity(0.09))
+                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(focusedField == .email ? Color(.black): .gray, lineWidth: 3))
+                    .padding(.horizontal)
+            }
+            
+            
+            VStack {
+                
+                HStack {
+                    Text("email")
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal,8)
+
+                TextField("Email", text: $email)
+                    .focused($focusedField, equals: .email)
+                    .padding()
+                    .background(Color.green.opacity(0.09))
+                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(focusedField == .email ? Color(.black): .gray, lineWidth: 3))
+                    .padding(.horizontal)
+            }
+            
+            VStack {
+                
+                HStack {
+                    Text("password")
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal,8)
+
+                
+                SecureField("Password", text: $password)
+                    .focused($focusedField, equals: .password)
+                    .padding()
+                    .background(Color.green.opacity(0.09))
+                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(focusedField == .email ? Color(.black): .gray, lineWidth: 3))
+                    .padding(.horizontal)
+            }
             
             Button {
                 if self.email != "" &&  self.password != "" && self.username != "" {
                     self.createNewAccount(username: username, email: email, password: password)
+                }
+                else{
+                    errorMessage = "please make sure to enter all filds"
                 }
             }label: {
                 Text("sign up")
@@ -62,24 +122,23 @@ struct SignUpScreen: View {
                     .padding()
                     .background(Color.green)
                     .cornerRadius(10)
-
+                
             }
+            .padding()
             
             Button("already have an account?"){
                 goToLogin.toggle()
                 
             }.padding(3)
             Spacer()
-            if usermanagerVM.errorAlert {
-                CustomAlertCardView(icon: "xmark", text: "could not create user", detail: "please try again ", gridentColor: .red, circleColor: .red, show: $show)
-            }
-                
+       
+            
             
         }
         .fullScreenCover(isPresented: $goToLogin, content: {
             logInScreen(didCompleteLogInProcess: {}, shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
         })
-      
+        
         
         
     }
@@ -92,12 +151,12 @@ struct SignUpScreen: View {
     ///   - username: username of the user
     ///   - email: email of the user
     ///   - password: password of the user
-     func createNewAccount(username: String, email: String, password: String ) {
+    func createNewAccount(username: String, email: String, password: String ) {
         
         Firebase.Auth.auth().createUser(withEmail: email, password: password) { result, err in
             if let err = err {
                 print("Failed to create user:", err)
-//                self.errorAlert = true
+                self.errorMessage = "failed to create useer "
                 return
             }
             print("Successfully created user: \(result?.user.uid ?? "")")
@@ -118,14 +177,14 @@ struct SignUpScreen: View {
         Firebase.Firestore.firestore().collection("users").document(uid).setData(userData){ err in
             if let err = err {
                 print(err)
-
+                
                 return
             }
             print("user information has been saved")
             Auth.auth().currentUser?.sendEmailVerification()
             shouldDisplayOnBoarding.toggle()
         }
-//        return true
+        //        return true
     }//store
     
     

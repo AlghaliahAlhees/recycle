@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F113CF382BC0660400FDA7D8 /* ForgetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F113CF372BC0660400FDA7D8 /* ForgetPasswordScreen.swift */; };
 		F115446A2BA9FD7500BE0C66 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11544692BA9FD7500BE0C66 /* TabBarButton.swift */; };
 		F115446C2BA9FF3200BE0C66 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */; };
 		F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */; };
+		F14E6C692BCAFD1000070885 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C682BCAFD1000070885 /* CategoriesView.swift */; };
+		F14E6C6B2BCB008000070885 /* CategoreisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6A2BCB008000070885 /* CategoreisModel.swift */; };
+		F14E6C6D2BCB0E7500070885 /* AdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6C2BCB0E7500070885 /* AdressView.swift */; };
+		F14E6C702BCB0ECC00070885 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */; };
 		F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */; };
 		F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */; };
 		F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17948F92BB64694006C0F43 /* FeedsModel.swift */; };
@@ -48,6 +53,8 @@
 		F17DD4ED2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F17DD4EC2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community */; };
 		F17DD4EF2BB4AE7600CF7871 /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */; };
 		F17DD4F12BB4B6B400CF7871 /* PointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */; };
+		F180A3DC2BBA96A20056C3F7 /* RewardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180A3DB2BBA96A20056C3F7 /* RewardCardView.swift */; };
+		F180A3DF2BBA9BD80056C3F7 /* FeedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180A3DE2BBA9BD80056C3F7 /* FeedCardView.swift */; };
 		F18E29412BA766B700565D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F18E29402BA766B600565D71 /* GoogleService-Info.plist */; };
 		F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F42BA6137C00977739 /* recycleApp.swift */; };
 		F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8C3F62BA6137C00977739 /* ContentView.swift */; };
@@ -67,12 +74,18 @@
 		F1B2D8612BAF39DB005B41AE /* OnBoardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8602BAF39DB005B41AE /* OnBoardingCardView.swift */; };
 		F1B2D8A32BAF44C0005B41AE /* OnBoardingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8A22BAF44C0005B41AE /* OnBoardingViews.swift */; };
 		F1B2D8A52BB0B36D005B41AE /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */; };
+		F1EB03202BDC4A12001ED16F /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB031F2BDC4A11001ED16F /* TimePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F113CF372BC0660400FDA7D8 /* ForgetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordScreen.swift; sourceTree = "<group>"; };
 		F11544692BA9FD7500BE0C66 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F115446D2BAB51F500BE0C66 /* CustomTabsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabsModel.swift; sourceTree = "<group>"; };
+		F14E6C682BCAFD1000070885 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		F14E6C6A2BCB008000070885 /* CategoreisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoreisModel.swift; sourceTree = "<group>"; };
+		F14E6C6C2BCB0E7500070885 /* AdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressView.swift; sourceTree = "<group>"; };
+		F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeConstants.swift; sourceTree = "<group>"; };
 		F17948F92BB64694006C0F43 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
@@ -85,6 +98,8 @@
 		F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCardView.swift; sourceTree = "<group>"; };
 		F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
 		F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsModel.swift; sourceTree = "<group>"; };
+		F180A3DB2BBA96A20056C3F7 /* RewardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCardView.swift; sourceTree = "<group>"; };
+		F180A3DE2BBA9BD80056C3F7 /* FeedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCardView.swift; sourceTree = "<group>"; };
 		F18E29402BA766B600565D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1A8C3F12BA6137C00977739 /* recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A8C3F42BA6137C00977739 /* recycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recycleApp.swift; sourceTree = "<group>"; };
@@ -107,6 +122,7 @@
 		F1B2D8602BAF39DB005B41AE /* OnBoardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCardView.swift; sourceTree = "<group>"; };
 		F1B2D8A22BAF44C0005B41AE /* OnBoardingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViews.swift; sourceTree = "<group>"; };
 		F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		F1EB031F2BDC4A11001ED16F /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +163,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F113CF3A2BC06CBD00FDA7D8 /* log in and sign up */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8C40D2BA6265C00977739 /* logInScreen.swift */,
+				F113CF372BC0660400FDA7D8 /* ForgetPasswordScreen.swift */,
+				F1A8C40F2BA6266A00977739 /* SignUpScreen.swift */,
+			);
+			path = "log in and sign up";
+			sourceTree = "<group>";
+		};
 		F11544682BA9FD6000BE0C66 /* Custom Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +180,24 @@
 				F115446B2BA9FF3200BE0C66 /* CustomTabBar.swift */,
 			);
 			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
+		F14E6C672BCAFCD200070885 /* Request Views */ = {
+			isa = PBXGroup;
+			children = (
+				F14E6C682BCAFD1000070885 /* CategoriesView.swift */,
+				F14E6C6C2BCB0E7500070885 /* AdressView.swift */,
+				F1EB031F2BDC4A11001ED16F /* TimePickerView.swift */,
+			);
+			path = "Request Views";
+			sourceTree = "<group>";
+		};
+		F14E6C6E2BCB0EC200070885 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */ = {
@@ -178,6 +222,14 @@
 				F17DD4B62BB4945500CF7871 /* CustomAlertCardView.swift */,
 			);
 			path = "Custom Alerts";
+			sourceTree = "<group>";
+		};
+		F180A3DD2BBA9BC90056C3F7 /* Feed view */ = {
+			isa = PBXGroup;
+			children = (
+				F180A3DE2BBA9BD80056C3F7 /* FeedCardView.swift */,
+			);
+			path = "Feed view";
 			sourceTree = "<group>";
 		};
 		F1A8C3E82BA6137C00977739 = {
@@ -241,6 +293,7 @@
 				F17DD4AE2BB4832C00CF7871 /* RecycleInfoModel.swift */,
 				F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */,
 				F17948F92BB64694006C0F43 /* FeedsModel.swift */,
+				F14E6C6A2BCB008000070885 /* CategoreisModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +301,9 @@
 		F1A8C4042BA613B800977739 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F14E6C6E2BCB0EC200070885 /* Slider */,
+				F14E6C672BCAFCD200070885 /* Request Views */,
+				F180A3DD2BBA9BC90056C3F7 /* Feed view */,
 				F17DD4B52BB4938B00CF7871 /* Custom Alerts */,
 				F17DD4B02BB483D800CF7871 /* Recycle info  */,
 				F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */,
@@ -261,9 +317,8 @@
 		F1A8C4052BA61A5B00977739 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F1A8C40D2BA6265C00977739 /* logInScreen.swift */,
+				F113CF3A2BC06CBD00FDA7D8 /* log in and sign up */,
 				F1A8C4192BA626CF00977739 /* CompleteScreen.swift */,
-				F1A8C40F2BA6266A00977739 /* SignUpScreen.swift */,
 				F1A8C4112BA6268700977739 /* ProfileScreen.swift */,
 				F1A8C4132BA6269400977739 /* RewardScreen.swift */,
 				F1A8C4152BA626A700977739 /* FeedScreen.swift */,
@@ -289,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */,
+				F180A3DB2BBA96A20056C3F7 /* RewardCardView.swift */,
 			);
 			path = Rewards;
 			sourceTree = "<group>";
@@ -398,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EB03202BDC4A12001ED16F /* TimePickerView.swift in Sources */,
 				F1A8C4182BA626B900977739 /* OrderScreen.swift in Sources */,
 				F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */,
 				F1A8C41E2BA626E600977739 /* AboutUsScreen.swift in Sources */,
@@ -406,15 +463,22 @@
 				F17DD4B22BB483EC00CF7871 /* RecycleInfoCardView.swift in Sources */,
 				F115446A2BA9FD7500BE0C66 /* TabBarButton.swift in Sources */,
 				F1B2D8A52BB0B36D005B41AE /* RewardsView.swift in Sources */,
+				F14E6C6D2BCB0E7500070885 /* AdressView.swift in Sources */,
+				F14E6C692BCAFD1000070885 /* CategoriesView.swift in Sources */,
 				F17DD4AB2BB47A6B00CF7871 /* CustomNavigationBar.swift in Sources */,
+				F180A3DC2BBA96A20056C3F7 /* RewardCardView.swift in Sources */,
 				F1A8C41A2BA626CF00977739 /* CompleteScreen.swift in Sources */,
 				F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */,
 				F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */,
+				F180A3DF2BBA9BD80056C3F7 /* FeedCardView.swift in Sources */,
 				F17DD4AF2BB4832C00CF7871 /* RecycleInfoModel.swift in Sources */,
+				F113CF382BC0660400FDA7D8 /* ForgetPasswordScreen.swift in Sources */,
 				F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */,
+				F14E6C702BCB0ECC00070885 /* CustomSlider.swift in Sources */,
 				F17DD4B42BB48DC800CF7871 /* RecycleInfoView.swift in Sources */,
 				F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */,
 				F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */,
+				F14E6C6B2BCB008000070885 /* CategoreisModel.swift in Sources */,
 				F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
 				F17DD4F12BB4B6B400CF7871 /* PointsModel.swift in Sources */,

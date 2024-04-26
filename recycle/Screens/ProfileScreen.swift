@@ -7,13 +7,59 @@
 
 import SwiftUI
 import Firebase
+
+
+// Mark: Crop Config
+enum Crop: Equatable{ // the crop image view's shape type and size are definded
+case circle
+case rectangle
+case square
+case custom(CGSize)
+ 
+
+    func name()->String{ // to display the buttom on the action sheet
+    switch self {
+    case .circle:
+    return "Circle"
+    case .rectangle:
+    return "Rectangle"
+    case .square:
+    return "Square"
+    case let .custom(cGSize):
+    return "Custom \(Int(cGSize.width))x\(Int(cGSize.height))"
+           }
+       }
+       // define custom sizes for cirle, rectangle, and sqare
+    func size()->CGSize{
+    switch self {
+    case .circle:
+    return .init(width: 300, height: 300)
+    case .rectangle:
+    return .init(width: 300, height: 500)
+    case .square:
+    return .init(width: 300, height: 300)
+    case .custom(let cGSize):
+    return cGSize
+           }
+       }
+    }
+    
+    
+    
+    
+    
 struct ProfileScreen: View {
     @Binding var shouldDisplayOnBoarding : Bool
     @ObservedObject var usermanagerVM = UserAccountManager()
     @State var username: String = "no user "
+ 
 
+    
+    
     var body: some View {
         VStack{
+            
+    
             Text(username)
             Text("profile view ")
             Spacer()
@@ -26,6 +72,9 @@ struct ProfileScreen: View {
             }
             
         }
+        
+        
+        
         
     }
     

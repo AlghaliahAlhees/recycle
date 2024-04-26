@@ -59,3 +59,10 @@ let addPoints: LocalizedStringKey =  "addPoints"
 
 
 
+
+
+// log in
+let resetUserPassword: LocalizedStringKey = "resetPassword"
+let  resetPassswordtTitle: LocalizedStringKey = "resetPassswordtTitle"
+let email: LocalizedStringKey = "email"
+let resetPassswordtDetail: LocalizedStringKey = "resetPassswordtDetail"

@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-
+import Firebase
 struct RewardScreen: View {
     
     // MARK: - Properties
 
     @ObservedObject var usermanagerVM = UserAccountManager()
-
+@State var points = 0
     
     //MARK: Body
 
@@ -24,10 +24,10 @@ struct RewardScreen: View {
 //            //MARK: - navigation bar
             HStack(alignment: .center){ //Start: Hstack
                  CustomNavigationBar(customTitle: "reward", EnableDissmiss: false)
-                
-                Button("add points"){
-                    usermanagerVM.AddUserPoints(points: 5000000)
-                }
+//                
+//                Button("add points"){
+//                    usermanagerVM.AddUserPoints(points: 5000000)
+//                }
                 HStack{ //Start: Hstack
                      
                     
@@ -35,9 +35,9 @@ struct RewardScreen: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                     VStack(alignment: .center){
-                        Text("1000")
+                        Text("\(usermanagerVM.userPointsCount)")
                             .bold()
-                        Text("point")
+                        Text("points")
                         
                     }
                     .font(.caption)
@@ -50,8 +50,18 @@ struct RewardScreen: View {
              RewardsView()
             
         } //End: VStack
+        .onAppear(){
+            
+            usermanagerVM.feetcUserPointsCount()
+        }
+        
         
     }
+
+    
+    
+    
+    
 }
 
 #Preview {

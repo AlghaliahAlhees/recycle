@@ -21,14 +21,14 @@ struct pointsModel: Identifiable{
 }
 
 
-
-struct Repoints: Identifiable{
-    var id : String { documentId }
-    let documentId : String
-    let  points : String
-
-    init(documentId: String,data: [String: Any]) {
-        self.documentId = documentId
-        self.points = data[FirebaseConstants.points] as? String ?? ""
-    }
-}
+//
+//struct Repoints: Identifiable{
+//    var id : String { documentId }
+//    let documentId : String
+//    let  points : String
+//
+//    init(documentId: String,data: [String: Any]) {
+//        self.documentId = documentId
+//        self.points = data[FirebaseConstants.points] as? String ?? ""
+//    }
+//}

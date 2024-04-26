@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct FeedScreen: View {
-        @ObservedObject var usermanagerVM = UserAccountManager()
-
+    // MARK: - Properties
+    
+    @ObservedObject var usermanagerVM = UserAccountManager()
+    
+    //MARK: Body
+    
     var body: some View {
         VStack {
-            if !usermanagerVM.feeds.isEmpty{
-                Text(usermanagerVM.feeds[0].feed)
-            }
-            Button{
-                usermanagerVM.sendFeed()
-                
-            }label: {
-                Text("press me")
-            }.onAppear{
-                
-                usermanagerVM.fetchFeeds()
-        }
+            //MARK: custom nav bar
+            CustomNavigationBar(customTitle: "Feed", EnableDissmiss: false)
+            ForEach (usermanagerVM.feeds){ feed in
+                FeedCardView(feed: feed)
+            }// for each
+            
+        }// vstack
+        .onAppear{
+            
+            usermanagerVM.fetchFeeds()
         }
     }
+    
+    
+    
 }
 
 #Preview {

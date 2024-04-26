@@ -65,6 +65,10 @@
 // log in and sign up view
 
 
+"resetPassword" = "reset your password";
+"email" = "email";
+"resetPassswordtTitle" = "trouble loggin in?";
+"resetPassswordtDetail" = "Enter your email and we will send you a link to reset your account";
 
 
 

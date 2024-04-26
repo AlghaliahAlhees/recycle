@@ -22,7 +22,6 @@ struct ContentView: View {
         VStack {
            
                 //MARK: Custom tabView
-                
                 if selectedTabs == .profile{
                     ProfileScreen(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
                 }

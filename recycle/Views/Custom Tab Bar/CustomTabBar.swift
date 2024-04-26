@@ -40,7 +40,7 @@ struct CustomTabBar: View {
                     
                 } label: {
                     
-                    TabBarButton(buttonText: "leaderboard", imageName: "crown", isActive: selectedTabs == .leaderboard)
+                    TabBarButton(buttonText: "info", imageName: "info", isActive: selectedTabs == .leaderboard)
                 }
                 .tint(Color.gray)
             } //End: HStack

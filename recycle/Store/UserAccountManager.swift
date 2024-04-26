@@ -16,6 +16,8 @@ class UserAccountManager: ObservableObject {
     @Published var feeds : [feedsModel] = []
     @Published var errorAlert : Bool = false
     @Published  var ifAccepted: Bool = false
+    @Published  var userPointsCount = 0
+
     init() {
 
         self.isUserCurrentlyLoggedOut = Firebase.Auth.auth().currentUser?.uid   == nil
@@ -27,17 +29,7 @@ class UserAccountManager: ObservableObject {
     
     // MARK: - FUNCTIONS
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     // send feed
@@ -102,7 +94,7 @@ class UserAccountManager: ObservableObject {
     ///   - username: username of the user
     ///   - email: email of the user
     ///   - password: password of the user
-//    / - Returns: return True if user logged in
+    /// - Returns: return True if user logged in
     private func loginUser(email: String, password: String)  -> Bool {
         
         Firebase.Auth.auth().signIn(withEmail: email, password: password) { result, err in
@@ -207,6 +199,34 @@ class UserAccountManager: ObservableObject {
             }
         
     }
+    
+    
+    
+    /// function to fetch how many points do user have    
+    func feetcUserPointsCount() {
+        guard let uid = Firebase.Auth.auth().currentUser?.uid else { return  }
+        
+        // fetch how many point does a user have and then add them
+        Firestore.firestore().collection(FirebaseConstants.points).document(uid)
+            .getDocument { snapshot , err in
+                if let error = err {
+                    print("Faild To Fetch Current User points \(error)")
+                    return
+                }
+                guard let data = snapshot?.data() else {
+                    return
+                }
+                //MARK: DECODE A DATA
+                self.userPointsCount =  data["points"] as! Int
+                print("user points \(self.userPointsCount)")
+                //                    print("user points \(self.points)")
+            }
+   
+        
+    }
+    
+    
+    
     
     
     var userPoints : Int = 0

@@ -15,7 +15,7 @@ struct feedsModel: Identifiable{
     var id : String { documentId }
     let documentId : String
     let feed : String
-        let timestamp: Timestamp
+    let timestamp: Timestamp
 
     init(documentId: String,data: [String: Any]) {
         self.documentId = documentId

@@ -71,8 +71,10 @@
 
 // log in and sign up view
 
-
-
+"resetPassword" = "اعادة تعيين كلمة السر";
+"email" = "البريد الالكتروني";
+"resetPassswordtTitle" = "هل تواجه مشكلة عند تسجيل الدخول؟";
+"resetPassswordtDetail" = "ادخل بريدك الالكتروني وسيتم ارسال رابط لاعادة تعيين كلمة السر";
 
 
 //profile view
