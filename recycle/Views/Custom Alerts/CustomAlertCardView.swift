@@ -65,7 +65,7 @@ struct CustomAlertCardView: View {
             
             .onChange(of: show) { newValue in
                 if newValue {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { withAnimation {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) { withAnimation {
                         show = false
                     }
                     }

@@ -9,74 +9,122 @@ import SwiftUI
 import Firebase
 
 
-// Mark: Crop Config
-enum Crop: Equatable{ // the crop image view's shape type and size are definded
-case circle
-case rectangle
-case square
-case custom(CGSize)
- 
-
-    func name()->String{ // to display the buttom on the action sheet
-    switch self {
-    case .circle:
-    return "Circle"
-    case .rectangle:
-    return "Rectangle"
-    case .square:
-    return "Square"
-    case let .custom(cGSize):
-    return "Custom \(Int(cGSize.width))x\(Int(cGSize.height))"
-           }
-       }
-       // define custom sizes for cirle, rectangle, and sqare
-    func size()->CGSize{
-    switch self {
-    case .circle:
-    return .init(width: 300, height: 300)
-    case .rectangle:
-    return .init(width: 300, height: 500)
-    case .square:
-    return .init(width: 300, height: 300)
-    case .custom(let cGSize):
-    return cGSize
-           }
-       }
-    }
-    
-    
-    
-    
-    
 struct ProfileScreen: View {
+    
+    // MARK: - Properties
+    
     @Binding var shouldDisplayOnBoarding : Bool
     @ObservedObject var usermanagerVM = UserAccountManager()
     @State var username: String = "no user "
- 
-
     
+    
+    //MARK: Body
     
     var body: some View {
         VStack{
             
-    
-            Text(username)
-            Text("profile view ")
-            Spacer()
-            Button("sign out"){
-                
-                handleSignOut()
-            }
-            .onAppear(){
-                fetchCurrentUser()
-            }
+            Text("Hello \(username)")
+                .padding() // padding with the primary color (black)
+                .foregroundColor(.black) // font color to black
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/) // font type
+                .padding(.vertical)
             
+            // point total
+            Button(action: {
+                // perform
+                print("point tapped!")
+            }) {
+                // button
+                HStack {
+                    Text("point total")
+                        .fontWeight(.light)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+            }
+            .buttonStyle(GradientBackgroundStryle())
+            .padding(.vertical)
+            
+            //edit account
+            Button(action: {
+                // perform
+                print("Edit tapped!")
+            }) {
+                // button
+                HStack {
+                    Image(systemName: "square.and.pencil")
+                        .font(.title3)
+                    Text("Edit account")
+                        .fontWeight(.light)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+            }
+            .buttonStyle(GradientBackgroundStryle())
+            
+            // about us
+            Button(action: {
+                // perform
+                print("about us tapped")
+            }) {
+                // button
+                HStack {
+                    Image(systemName: "")
+                        .font(.title3)
+                    Text("about us")
+                        .fontWeight(.light)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+            }
+            .buttonStyle(GradientBackgroundStryle())
+            .padding(.vertical)
+            .buttonStyle(GradientBackgroundStryle())
+            .padding(.bottom)
+            
+            
+            VStack{
+                Button{
+                    // log out
+                    handleSignOut()
+                    
+                }label: {
+                    
+                    
+                    Text("Log out")
+                        .font(.title3)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(50.0)
+                        .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                } // button
+            } //vstack
+            
+            Button(action: {
+                // perform
+                print("delete tapped")
+            }) {
+                // button
+                HStack {
+                    Image(systemName: "trash")
+                        .font(.title3)
+                        .foregroundColor(.red)
+                    Text("Delete account")
+                        .foregroundColor(.red)
+                }
+            }// delete button
+            
+        }//V Stack
+        
+        .onAppear(){
+            fetchCurrentUser()
         }
         
-        
-        
-        
     }
+    
+    
+    
+    
+    // MARK: - FUNCTIONS
+    
     
     /// this function to sign out
     func handleSignOut(){
@@ -84,7 +132,7 @@ struct ProfileScreen: View {
             try? Firebase.Auth.auth().signOut()
             usermanagerVM.isUserCurrentlyLoggedOut.toggle()
             shouldDisplayOnBoarding.toggle()
-        }   
+        }
     }
     
     

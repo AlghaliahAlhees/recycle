@@ -29,6 +29,8 @@ struct OrderScreen: View {
                 
                 CategoriesView()
                 
+                TimePickerView()
+                
                 
                 AdressView()
                 

@@ -15,6 +15,9 @@
 		F14E6C6B2BCB008000070885 /* CategoreisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6A2BCB008000070885 /* CategoreisModel.swift */; };
 		F14E6C6D2BCB0E7500070885 /* AdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6C2BCB0E7500070885 /* AdressView.swift */; };
 		F14E6C702BCB0ECC00070885 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */; };
+		F16A90122BDFDB740072698E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A90112BDFDB740072698E /* ProfileModel.swift */; };
+		F16A90142BDFDC420072698E /* RewardSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A90132BDFDC420072698E /* RewardSystemManager.swift */; };
+		F16A90172BDFE62D0072698E /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = F16A90162BDFE62D0072698E /* AlertKit */; };
 		F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */; };
 		F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */; };
 		F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17948F92BB64694006C0F43 /* FeedsModel.swift */; };
@@ -86,6 +89,8 @@
 		F14E6C6A2BCB008000070885 /* CategoreisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoreisModel.swift; sourceTree = "<group>"; };
 		F14E6C6C2BCB0E7500070885 /* AdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressView.swift; sourceTree = "<group>"; };
 		F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		F16A90112BDFDB740072698E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		F16A90132BDFDC420072698E /* RewardSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSystemManager.swift; sourceTree = "<group>"; };
 		F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeConstants.swift; sourceTree = "<group>"; };
 		F17948F92BB64694006C0F43 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 				F17DD4DB2BB4ADCC00CF7871 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				F17DD4CD2BB4ADCC00CF7871 /* FirebaseDatabaseSwift in Frameworks */,
 				F17DD4D72BB4ADCC00CF7871 /* FirebaseFunctions in Frameworks */,
+				F16A90172BDFE62D0072698E /* AlertKit in Frameworks */,
 				F17DD4ED2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community in Frameworks */,
 				F17DD4E72BB4ADCC00CF7871 /* FirebaseRemoteConfig in Frameworks */,
 				F17DD4C32BB4ADCC00CF7871 /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -279,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */,
+				F16A90132BDFDC420072698E /* RewardSystemManager.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 				F17DD4F02BB4B6B400CF7871 /* PointsModel.swift */,
 				F17948F92BB64694006C0F43 /* FeedsModel.swift */,
 				F14E6C6A2BCB008000070885 /* CategoreisModel.swift */,
+				F16A90112BDFDB740072698E /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 				F17DD4E82BB4ADCC00CF7871 /* FirebaseRemoteConfigSwift */,
 				F17DD4EA2BB4ADCC00CF7871 /* FirebaseStorage */,
 				F17DD4EC2BB4ADCC00CF7871 /* FirebaseStorageCombine-Community */,
+				F16A90162BDFE62D0072698E /* AlertKit */,
 			);
 			productName = recycle;
 			productReference = F1A8C3F12BA6137C00977739 /* recycle.app */;
@@ -425,6 +434,7 @@
 			mainGroup = F1A8C3E82BA6137C00977739;
 			packageReferences = (
 				F18E29422BA7689400565D71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F16A90152BDFE62C0072698E /* XCRemoteSwiftPackageReference "SPAlert" */,
 			);
 			productRefGroup = F1A8C3F22BA6137C00977739 /* Products */;
 			projectDirPath = "";
@@ -477,7 +487,9 @@
 				F14E6C702BCB0ECC00070885 /* CustomSlider.swift in Sources */,
 				F17DD4B42BB48DC800CF7871 /* RecycleInfoView.swift in Sources */,
 				F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */,
+				F16A90122BDFDB740072698E /* ProfileModel.swift in Sources */,
 				F1A8C3F52BA6137C00977739 /* recycleApp.swift in Sources */,
+				F16A90142BDFDC420072698E /* RewardSystemManager.swift in Sources */,
 				F14E6C6B2BCB008000070885 /* CategoreisModel.swift in Sources */,
 				F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
@@ -645,6 +657,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,6 +689,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,6 +728,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F16A90152BDFE62C0072698E /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPAlert";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.9;
+			};
+		};
 		F18E29422BA7689400565D71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -725,6 +747,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F16A90162BDFE62D0072698E /* AlertKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F16A90152BDFE62C0072698E /* XCRemoteSwiftPackageReference "SPAlert" */;
+			productName = AlertKit;
+		};
 		F17DD4B82BB4ADCC00CF7871 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F18E29422BA7689400565D71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

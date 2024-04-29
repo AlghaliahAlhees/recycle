@@ -31,6 +31,7 @@ struct ContentView: View {
                 
                 if selectedTabs == .reward{
                     RewardScreen()
+                        .environmentObject(RewardSystemManager())
                 }
                 if selectedTabs == .leaderboard{
                     RecycleInfoView()

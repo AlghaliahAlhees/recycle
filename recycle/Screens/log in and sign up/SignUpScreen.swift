@@ -15,6 +15,7 @@ struct SignUpScreen: View {
     @State private var username: String  = ""
     @State private var goToLogin: Bool  = false
     @State private var errorMessage: String  = ""
+    @FocusState var isFocused : Bool // 1
 
     @ObservedObject var usermanagerVM = UserAccountManager()
     @Binding var shouldDisplayOnBoarding : Bool
@@ -56,6 +57,8 @@ struct SignUpScreen: View {
                 .padding(.horizontal,8)
                 TextField("Username", text: $username)
                     .focused($focusedField, equals: .username)
+                    .focused($isFocused) // 2
+
                     .padding()
                     .background(Color.green.opacity(0.09))
                     .cornerRadius(12)
@@ -76,6 +79,8 @@ struct SignUpScreen: View {
                 .padding(.horizontal,8)
 
                 TextField("Email", text: $email)
+                    .focused($isFocused) // 2
+
                     .focused($focusedField, equals: .email)
                     .padding()
                     .background(Color.green.opacity(0.09))
@@ -98,6 +103,8 @@ struct SignUpScreen: View {
                 
                 SecureField("Password", text: $password)
                     .focused($focusedField, equals: .password)
+                    .focused($isFocused) // 2
+
                     .padding()
                     .background(Color.green.opacity(0.09))
                     .cornerRadius(12)
@@ -138,7 +145,9 @@ struct SignUpScreen: View {
         .fullScreenCover(isPresented: $goToLogin, content: {
             logInScreen(didCompleteLogInProcess: {}, shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
         })
-        
+        .onTapGesture {
+            isFocused = false
+        }
         
         
     }

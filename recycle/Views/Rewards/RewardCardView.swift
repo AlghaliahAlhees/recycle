@@ -13,7 +13,7 @@ struct RewardCardView: View {
     var image: String
     var name: String
     var point: Int
-    @ObservedObject var usermanagerVM = UserAccountManager()
+    @EnvironmentObject var rewardSystemVM : RewardSystemManager
     @Binding  var show : Bool
 
     //MARK: Body
@@ -36,7 +36,7 @@ struct RewardCardView: View {
             
             // button
             Button{
-                usermanagerVM.claimAReward(rewardPoints: point, RewardTitle: name)
+                rewardSystemVM.claimAReward(rewardPoints: point, RewardTitle: name)
             }label: {
                 VStack{
                     Text("claim")

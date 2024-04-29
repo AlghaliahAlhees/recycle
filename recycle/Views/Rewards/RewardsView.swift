@@ -11,7 +11,7 @@ struct RewardsView: View {
     // MARK: - Properties
 
     @State var addApdeptdColumn = [GridItem(.adaptive(minimum: 170 ))]
-    @ObservedObject var usermanagerVM = UserAccountManager()
+    @EnvironmentObject var rewardSystemVM : RewardSystemManager
     @State private var show = true
 
     //MARK: Body
@@ -28,10 +28,7 @@ struct RewardsView: View {
                     
                 }//End: for each
             } //End: scroll
-            if usermanagerVM.ifAccepted{
-                CustomAlertCardView(icon: "checkmark.circle", text: "reward has been claimd", detail: "congratulation you claimed your reward", gridentColor: .green, circleColor: .green, show: $show)
-                
-            }
+
         
     } //End: scroll   
 }

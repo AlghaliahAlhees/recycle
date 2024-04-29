@@ -14,6 +14,7 @@ struct ForgetPasswordScreen: View {
     @State private var email: String  = ""
 //    @State private var goToLogin: Bool  = false
     @State var errorMessage = ""
+    @FocusState var isFocused : Bool // 1
 
     //MARK: Body
 
@@ -45,6 +46,8 @@ struct ForgetPasswordScreen: View {
                 .padding(.horizontal,8)
 
                 TextField(email, text: $email)
+                    .focused($isFocused) // 2
+
                     .padding()
                     .background(Color.gray.opacity(0.09))
                     .cornerRadius(12)
@@ -75,6 +78,9 @@ struct ForgetPasswordScreen: View {
             
             
         } //End: Vstack
+        .onTapGesture {
+            isFocused = false
+        }
     }
     
     // MARK: - FUNCTIONS

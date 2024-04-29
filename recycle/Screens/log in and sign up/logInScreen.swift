@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-
+import AlertKit
 enum FocusedField {
     case email
     case password
@@ -28,8 +28,10 @@ struct logInScreen: View {
     @Binding var shouldDisplayOnBoarding : Bool
     @State private var shouldgoToSgignUp: Bool = false
     @State private var shouldgoToResetPassword: Bool = false
-
+    @FocusState var isFocused : Bool // 1
     @State private var errorMessage: String  = ""
+    let alertView = AlertAppleMusic17View(title: "loading", subtitle: "", icon: .spinnerLarge)
+    @State private var isLoading: Bool = false
 
     
     
@@ -62,6 +64,8 @@ struct logInScreen: View {
 
                     TextField("Email", text: $email)
                         .focused($focusedField, equals: .email)
+                        .focused($isFocused) // 2
+
                         .padding()
                         .background(Color.green.opacity(0.09))
                         .cornerRadius(12)
@@ -82,6 +86,8 @@ struct logInScreen: View {
 
                     SecureField("Password", text: $password)
                         .focused($focusedField, equals: .password)
+                        .focused($isFocused) // 2
+
                         .padding()
                         .background(Color.green.opacity(0.09))
                         .cornerRadius(12)
@@ -107,9 +113,13 @@ struct logInScreen: View {
             } //End:Hstack
             Button {
                 //action
+                isLoading = true
                 if self.email != "" &&  self.password != "" {
                     self.loginUser( email: email, password: password)
+
                 }
+                isLoading = false
+
             } label: {
                 Text("log in")
                     .font(.system(size: 20, weight: .semibold))
@@ -121,7 +131,8 @@ struct logInScreen: View {
             .cornerRadius(12)
             .padding()
             
-            
+            .alert(isPresent: $isLoading, view: alertView)
+
             
             Spacer()
             
@@ -138,6 +149,9 @@ struct logInScreen: View {
         .fullScreenCover(isPresented: $shouldgoToResetPassword, content: {
         ForgetPasswordScreen()
         })
+        .onTapGesture {
+            isFocused = false
+        }
         
     }
     
@@ -152,16 +166,17 @@ struct logInScreen: View {
     ///   - password: password of the user
     //    / - Returns: return True if user logged in
     private func loginUser(email: String, password: String) {
-        
         Firebase.Auth.auth().signIn(withEmail: email, password: password) { result, err in
             if let err = err {
                 print("Failed to login user:", err)
                 self.errorMessage = "Failed to login user, try again"
+                isLoading = false
+
                 return
             }
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
+
             shouldDisplayOnBoarding.toggle()
-            
             
         }
     }

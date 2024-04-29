@@ -17,12 +17,14 @@ struct FeedScreen: View {
     var body: some View {
         VStack {
             //MARK: custom nav bar
-            CustomNavigationBar(customTitle: "Feed", EnableDissmiss: false)
-            ForEach (usermanagerVM.feeds){ feed in
-                FeedCardView(feed: feed)
-            }// for each
-            
+            ScrollView{
+                CustomNavigationBar(customTitle: "Feed", EnableDissmiss: false)
+                ForEach (usermanagerVM.feeds){ feed in
+                    FeedCardView(feed: feed)
+                }// for each
+            }//scrol
         }// vstack
+            
         .onAppear{
             
             usermanagerVM.fetchFeeds()

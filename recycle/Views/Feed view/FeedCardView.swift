@@ -23,20 +23,19 @@ struct FeedCardView: View {
             
             // feed
             Text(feed.feed)
-                .font(.headline)
+                .font(.callout)
                 .padding()
             
             HStack{
                 Text(feed.timestamp.dateValue().formatted())
-                Text("1 week ago")
                     .font(.caption)
                     .padding()
                 Spacer()
                 
             }// hstack
         }// vstack
-        .frame(height: 200)
         .cornerRadius(10)
+        .frame(height: 200)
         .background(Color.green.opacity(0.1))
         .padding(3)
     }
