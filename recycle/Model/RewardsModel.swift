@@ -37,10 +37,11 @@ struct reward : Identifiable{
 }
 
 
-var rewards: [reward] = [.init(Image: "puff", name: "puff", points: 100),
-                         .init(Image: "puff", name: "puff", points: 90),
-                         .init(Image: "puff", name: "puff", points: 10000),
-                         .init(Image: "puff", name: "puff", points: 10330),
-                         .init(Image: "puff", name: "puff", points: 10000)
+var rewards: [reward] = [.init(Image: "puff", name: "puff", points: 1000),
+                         .init(Image: "puff2", name: "puff", points: 5000),
+                         .init(Image: "card", name: "talabat", points: 10000),
+                         .init(Image: "fruit", name: "fruit basket", points: 7000),
+                         .init(Image: "tree", name: "planning tree", points: 25000),
+                         .init(Image: "solar", name: "solar charging", points: 35000)
 
 ]

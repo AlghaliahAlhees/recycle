@@ -21,6 +21,6 @@ struct CategoreyModel: Identifiable{
 var categories: [CategoreyModel] = [
     .init(name: "glass", image: "glass", isPressed: false),
     .init(name: "plastic", image: "plastic", isPressed: false),
-    .init(name: "electronical", image: "elec", isPressed: false),
+    .init(name: "electronics", image: "elec", isPressed: false),
     .init(name: "paper", image: "paper", isPressed: false)
 ]

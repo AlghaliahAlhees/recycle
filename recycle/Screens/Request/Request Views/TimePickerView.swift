@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct TimePickerView: View {
+    // MARK: - Properties
+
     @State var showTimePicker: Bool = false
-    
+    @EnvironmentObject var RequestPickUpSystemVM : RequestPickUpManager
     @State var time: Date = Date()
+    @State var goToAdressView: Bool = false
+
     var body: some View {
         VStack{
             
@@ -88,7 +92,8 @@ struct TimePickerView: View {
             Button{
                 
                 // go to address view
-                
+                RequestPickUpSystemVM.updateChosenDate(time: time)
+                goToAdressView.toggle()
                 
             } label: {
                 Text(next)
@@ -104,6 +109,10 @@ struct TimePickerView: View {
             
             
         } // vstack
+        .fullScreenCover(isPresented: $goToAdressView, content: {
+            AdressView().environmentObject(RequestPickUpSystemVM)
+
+        })
     }
 }
 

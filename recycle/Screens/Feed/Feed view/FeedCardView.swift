@@ -15,15 +15,16 @@ struct FeedCardView: View {
         VStack{
             // company name
             HStack {
-                Spacer()
-                Text("Company name")
+                Text("Recycle")
                     .bold()
                     .padding()
+                Spacer()
             }
             
             // feed
             Text(feed.feed)
                 .font(.callout)
+                .lineLimit(5)
                 .padding()
             
             HStack{

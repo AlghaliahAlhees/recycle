@@ -177,23 +177,23 @@ struct SignUpScreen: View {
     /// Function fto store the user account informations
     ///  - Parameters:
     ///  - username: username of the user
-    ///  - email: email of the user
+    ///  - email:  email of the user
     ///  - password: password of the user
-    /// - Returns: return True if user information has been saved
     private func storeUserInformation(username: String, email: String, password: String )  {
         guard let uid = Firebase.Auth.auth().currentUser?.uid else { return  }
         let userData = ["email": email, "uid": uid, "username": username]
         Firebase.Firestore.firestore().collection("users").document(uid).setData(userData){ err in
             if let err = err {
+                // could not save user information
                 print(err)
                 
                 return
             }
+            // user information has been saved
             print("user information has been saved")
             Auth.auth().currentUser?.sendEmailVerification()
             shouldDisplayOnBoarding.toggle()
         }
-        //        return true
     }//store
     
     

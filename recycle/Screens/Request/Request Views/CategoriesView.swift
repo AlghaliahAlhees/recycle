@@ -13,14 +13,12 @@ struct CategoriesView: View {
     
     
     // MARK: - Properties
-    
+    @EnvironmentObject var RequestPickUpSystemVM : RequestPickUpManager
     @State var addApdeptdColumn = [GridItem(.adaptive(minimum: 170 ))]
-// var
-//    @State private var isPressed = false
+   @State  var chosenCategory : String = ""
+    @State var goToTimePicker: Bool = false
+    @State private var showingButtonsheet = false
 
-     
-
-   @State  var chosenCategory : CategoreyModel = CategoreyModel( name: "", image: "", isPressed: false)
     //MARK: Body
     
     var body: some View {
@@ -28,12 +26,9 @@ struct CategoriesView: View {
             Text("Choose items type")
                 .bold()
             
-            
-            
                 //MARK: - CUSTOM SLIDER
             CustomSlider(index: 0)
-            
-            Text(chosenCategory.name)
+
             ScrollView(.vertical){
                 LazyVGrid(columns: addApdeptdColumn, spacing: 20){
                     ForEach(categories){ category in
@@ -42,8 +37,8 @@ struct CategoriesView: View {
                             
                             Button{
 //                                category.isPressed = true
-                                self.chosenCategory = category
-                                
+                                self.chosenCategory = category.name
+                                showingButtonsheet.toggle()
                             }label: {
                                 VStack{
                                 // image
@@ -53,7 +48,6 @@ struct CategoriesView: View {
                                     .scaledToFit()
                                 
                                 //type
-                                
                                 Text(category.name)
                                     .bold()
                                     .font(.system(size: 24))
@@ -73,17 +67,50 @@ struct CategoriesView: View {
                         
                     }//End: for each
                     .padding()
+                    
+                
                 }//End: lazy
                 } //End: scroll
+            
+            Button {
+                // go to time picker view
+                goToTimePicker.toggle()
                 
-      
-            
-            
-            
-            
-            
+              
+            } label: {
+                
+                
+                Text(next)
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.white)
+                
+                
+                
+            } //End:Button
+            .padding(.vertical)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .background(.green)
+            .cornerRadius(12)
+            .padding()
             
         } //End: Vstack
+            .fullScreenCover(isPresented: $goToTimePicker, content: {
+                TimePickerView().environmentObject(RequestPickUpSystemVM)
+                
+            })
+        
+            .sheet(isPresented: $showingButtonsheet) {
+                if #available(iOS 16.0, *) {
+                    BottomSheet(chosenCategory: $chosenCategory)
+                        .environmentObject(RequestPickUpSystemVM)
+                        .presentationDetents([.fraction(0.8),.medium])
+                } else {
+               
+                    
+                }
+            }
+            
+       
     }
 }
 

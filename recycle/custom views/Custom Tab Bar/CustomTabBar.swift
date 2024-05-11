@@ -98,6 +98,7 @@ struct CustomTabBar: View {
         .frame( height: 62)
         .fullScreenCover(isPresented: $goToORderScreen, content: {
             OrderScreen()
+                .environmentObject(RequestPickUpManager())
         }) //End: full screen
     }
 }

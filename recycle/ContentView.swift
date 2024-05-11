@@ -11,7 +11,6 @@ import Firebase
 struct ContentView: View {
     
     // MARK: - Properties
-    @ObservedObject var usermanagerVM = UserAccountManager()
     
     @State var selectedTabs : Tabs = .profile
     @AppStorage("shouldDisplayOnBoarding")  var shouldDisplayOnBoarding : Bool = true
@@ -24,6 +23,7 @@ struct ContentView: View {
                 //MARK: Custom tabView
                 if selectedTabs == .profile{
                     ProfileScreen(shouldDisplayOnBoarding: $shouldDisplayOnBoarding)
+                        .environmentObject(UserAccountManager())
                 }
                 if selectedTabs == .feeds{
                     FeedScreen()
@@ -37,8 +37,6 @@ struct ContentView: View {
                     RecycleInfoView()
                 }
                 
-                
-            
                 Spacer()
                 
                 CustomTabBar(selectedTabs:  $selectedTabs)

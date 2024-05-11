@@ -141,6 +141,8 @@ struct logInScreen: View {
                 shouldgoToSgignUp.toggle()
             }
             
+            
+            
         }// vstack
         .fullScreenCover(isPresented: $shouldgoToSgignUp, content: {
             SignUpScreen(shouldDisplayOnBoarding: $shouldDisplayOnBoarding, didCompleteLogInProcess: {})
@@ -164,25 +166,20 @@ struct logInScreen: View {
     ///   - username: username of the user
     ///   - email: email of the user
     ///   - password: password of the user
-    //    / - Returns: return True if user logged in
     private func loginUser(email: String, password: String) {
         Firebase.Auth.auth().signIn(withEmail: email, password: password) { result, err in
             if let err = err {
                 print("Failed to login user:", err)
                 self.errorMessage = "Failed to login user, try again"
-                isLoading = false
-
                 return
             }
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
-
             shouldDisplayOnBoarding.toggle()
             
         }
     }
     
-    
-    
+     
     
 }
 

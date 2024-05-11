@@ -19,10 +19,11 @@ struct FirebaseConstants {
     static let users = "users"
     static let reports = "reports"
     static let tokens = "tokens"
-    static let pickUpRequest = "pickUpRequest"
+    static let pickUpRequest = "requests"
     static let points = "points"
     static let rewards = "rewards"
     static let feeds = "feeds"
+    static let report = "report"
 
     static let feed = "feed"
 

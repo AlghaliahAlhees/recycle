@@ -18,6 +18,8 @@
 		F16A90122BDFDB740072698E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A90112BDFDB740072698E /* ProfileModel.swift */; };
 		F16A90142BDFDC420072698E /* RewardSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A90132BDFDC420072698E /* RewardSystemManager.swift */; };
 		F16A90172BDFE62D0072698E /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = F16A90162BDFE62D0072698E /* AlertKit */; };
+		F16A90192BE016EF0072698E /* RequestPickUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A90182BE016EF0072698E /* RequestPickUpManager.swift */; };
+		F16A90202BE020630072698E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A901F2BE020630072698E /* BottomSheet.swift */; };
 		F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */; };
 		F16EB2E22BB3514000D3251F /* LocalizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */; };
 		F17948FA2BB64694006C0F43 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17948F92BB64694006C0F43 /* FeedsModel.swift */; };
@@ -91,6 +93,8 @@
 		F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		F16A90112BDFDB740072698E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		F16A90132BDFDC420072698E /* RewardSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSystemManager.swift; sourceTree = "<group>"; };
+		F16A90182BE016EF0072698E /* RequestPickUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPickUpManager.swift; sourceTree = "<group>"; };
+		F16A901F2BE020630072698E /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		F16EB2DF2BB34B8C00D3251F /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		F16EB2E12BB3514000D3251F /* LocalizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeConstants.swift; sourceTree = "<group>"; };
 		F17948F92BB64694006C0F43 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
@@ -192,8 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				F14E6C682BCAFD1000070885 /* CategoriesView.swift */,
+				F16A901F2BE020630072698E /* BottomSheet.swift */,
 				F14E6C6C2BCB0E7500070885 /* AdressView.swift */,
 				F1EB031F2BDC4A11001ED16F /* TimePickerView.swift */,
+				F1A8C4192BA626CF00977739 /* CompleteScreen.swift */,
 			);
 			path = "Request Views";
 			sourceTree = "<group>";
@@ -204,6 +210,53 @@
 				F14E6C6F2BCB0ECC00070885 /* CustomSlider.swift */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		F16A901A2BE01AEE0072698E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8C4172BA626B900977739 /* OrderScreen.swift */,
+				F14E6C672BCAFCD200070885 /* Request Views */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F16A901B2BE01B0B0072698E /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8C4132BA6269400977739 /* RewardScreen.swift */,
+				F1B2D8A62BB0B376005B41AE /* Reward views */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		F16A901C2BE01B4F0072698E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				F180A3DD2BBA9BC90056C3F7 /* Feed view */,
+				F1A8C4152BA626A700977739 /* FeedScreen.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		F16A901D2BE01B5E0072698E /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8C41F2BA6270000977739 /* DeleteAccountScreen.swift */,
+				F1A8C41D2BA626E600977739 /* AboutUsScreen.swift */,
+				F1A8C4112BA6268700977739 /* ProfileScreen.swift */,
+				F1A8C41B2BA626D900977739 /* EditProfileScreen.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		F16A901E2BE01B7A0072698E /* information */ = {
+			isa = PBXGroup;
+			children = (
+				F17DD4B02BB483D800CF7871 /* Recycle info  */,
+				F17DD4B32BB48DC800CF7871 /* RecycleInfoView.swift */,
+			);
+			path = information;
 			sourceTree = "<group>";
 		};
 		F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */ = {
@@ -260,12 +313,12 @@
 				F17948FB2BB6491D006C0F43 /* Info.plist */,
 				F1A8C40C2BA6260900977739 /* readme.md */,
 				F18E29402BA766B600565D71 /* GoogleService-Info.plist */,
-				F1A8C4052BA61A5B00977739 /* Screens */,
-				F1A8C4042BA613B800977739 /* Views */,
-				F1A8C4032BA6139B00977739 /* Model */,
-				F1A8C4022BA6139200977739 /* Store */,
 				F1A8C3F42BA6137C00977739 /* recycleApp.swift */,
 				F1A8C3F62BA6137C00977739 /* ContentView.swift */,
+				F1A8C4052BA61A5B00977739 /* Screens */,
+				F1A8C4042BA613B800977739 /* custom views */,
+				F1A8C4032BA6139B00977739 /* Model */,
+				F1A8C4022BA6139200977739 /* Store */,
 				F1A8C40A2BA61D6300977739 /* Localizable.strings */,
 				F1A8C3F82BA6137E00977739 /* Assets.xcassets */,
 				F1A8C3FA2BA6137E00977739 /* Preview Content */,
@@ -286,6 +339,7 @@
 			children = (
 				F17DD4EE2BB4AE7600CF7871 /* UserAccountManager.swift */,
 				F16A90132BDFDC420072698E /* RewardSystemManager.swift */,
+				F16A90182BE016EF0072698E /* RequestPickUpManager.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -306,35 +360,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F1A8C4042BA613B800977739 /* Views */ = {
+		F1A8C4042BA613B800977739 /* custom views */ = {
 			isa = PBXGroup;
 			children = (
 				F14E6C6E2BCB0EC200070885 /* Slider */,
-				F14E6C672BCAFCD200070885 /* Request Views */,
-				F180A3DD2BBA9BC90056C3F7 /* Feed view */,
 				F17DD4B52BB4938B00CF7871 /* Custom Alerts */,
-				F17DD4B02BB483D800CF7871 /* Recycle info  */,
 				F17DD4A92BB47A4E00CF7871 /* Custom Navigation Bar */,
-				F1B2D8A62BB0B376005B41AE /* Rewards */,
 				F1B2D85F2BAF397E005B41AE /* onBoarding */,
 				F11544682BA9FD6000BE0C66 /* Custom Tab Bar */,
 			);
-			path = Views;
+			path = "custom views";
 			sourceTree = "<group>";
 		};
 		F1A8C4052BA61A5B00977739 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F16A901D2BE01B5E0072698E /* settings */,
+				F16A901E2BE01B7A0072698E /* information */,
+				F16A901C2BE01B4F0072698E /* Feed */,
+				F16A901B2BE01B0B0072698E /* Reward */,
+				F16A901A2BE01AEE0072698E /* Request */,
 				F113CF3A2BC06CBD00FDA7D8 /* log in and sign up */,
-				F1A8C4192BA626CF00977739 /* CompleteScreen.swift */,
-				F1A8C4112BA6268700977739 /* ProfileScreen.swift */,
-				F1A8C4132BA6269400977739 /* RewardScreen.swift */,
-				F1A8C4152BA626A700977739 /* FeedScreen.swift */,
-				F1A8C4172BA626B900977739 /* OrderScreen.swift */,
-				F1A8C41B2BA626D900977739 /* EditProfileScreen.swift */,
-				F1A8C41D2BA626E600977739 /* AboutUsScreen.swift */,
-				F1A8C41F2BA6270000977739 /* DeleteAccountScreen.swift */,
-				F17DD4B32BB48DC800CF7871 /* RecycleInfoView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -348,13 +394,13 @@
 			path = onBoarding;
 			sourceTree = "<group>";
 		};
-		F1B2D8A62BB0B376005B41AE /* Rewards */ = {
+		F1B2D8A62BB0B376005B41AE /* Reward views */ = {
 			isa = PBXGroup;
 			children = (
 				F1B2D8A42BB0B36D005B41AE /* RewardsView.swift */,
 				F180A3DB2BBA96A20056C3F7 /* RewardCardView.swift */,
 			);
-			path = Rewards;
+			path = "Reward views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +527,7 @@
 				F16EB2E02BB34B8C00D3251F /* FirebaseConstants.swift in Sources */,
 				F1A8C3F72BA6137C00977739 /* ContentView.swift in Sources */,
 				F180A3DF2BBA9BD80056C3F7 /* FeedCardView.swift in Sources */,
+				F16A90202BE020630072698E /* BottomSheet.swift in Sources */,
 				F17DD4AF2BB4832C00CF7871 /* RecycleInfoModel.swift in Sources */,
 				F113CF382BC0660400FDA7D8 /* ForgetPasswordScreen.swift in Sources */,
 				F115446E2BAB51F500BE0C66 /* CustomTabsModel.swift in Sources */,
@@ -493,6 +540,7 @@
 				F14E6C6B2BCB008000070885 /* CategoreisModel.swift in Sources */,
 				F17DD4B72BB4945600CF7871 /* CustomAlertCardView.swift in Sources */,
 				F1A8C41C2BA626D900977739 /* EditProfileScreen.swift in Sources */,
+				F16A90192BE016EF0072698E /* RequestPickUpManager.swift in Sources */,
 				F17DD4F12BB4B6B400CF7871 /* PointsModel.swift in Sources */,
 				F17DD4AD2BB4810F00CF7871 /* RewardsModel.swift in Sources */,
 				F1A8C4162BA626A700977739 /* FeedScreen.swift in Sources */,
@@ -646,7 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"recycle/Preview Content\"";
 				DEVELOPMENT_TEAM = Q798B7356U;
 				ENABLE_PREVIEWS = YES;
@@ -655,9 +703,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"recycle/Preview Content\"";
 				DEVELOPMENT_TEAM = Q798B7356U;
 				ENABLE_PREVIEWS = YES;
@@ -687,9 +736,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

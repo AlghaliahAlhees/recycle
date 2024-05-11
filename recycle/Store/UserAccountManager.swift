@@ -16,13 +16,17 @@ class UserAccountManager: ObservableObject {
     @Published var feeds : [feedsModel] = []
     @Published var errorAlert : Bool = false
     @Published  var ifAccepted: Bool = false
-
+    @Published var username: String = "welcome back"
+    @Published var email: String = ""
     @Published  var userPointsCount = 0
-
+    @Published var updatedUserInfo: Bool = false
+    @Published var NotupdatedUserInfo: Bool = false
+    
     init() {
-
+        
         self.isUserCurrentlyLoggedOut = Firebase.Auth.auth().currentUser?.uid   == nil
         fetchFeeds()
+        fetchCurrentUser()
     }
     
     
@@ -30,12 +34,12 @@ class UserAccountManager: ObservableObject {
     
     // MARK: - FUNCTIONS
     
-
+    
     
     
     // send feed
     
-     func sendFeed() {
+    func sendFeed() {
         let FeedData = [FirebaseConstants.feed: "Hello everyone, thanks for using our app", FirebaseConstants.timestamp: Timestamp()] as [String : Any]
         Firebase.Firestore.firestore().collection(FirebaseConstants.feeds).document().setData(FeedData){ err in
             if let err = err {
@@ -64,7 +68,7 @@ class UserAccountManager: ObservableObject {
                     print(newFeed)
                 }
             }   }
-
+    
     
     
     
@@ -73,7 +77,6 @@ class UserAccountManager: ObservableObject {
     func fetchCurrentUser()
     {
         guard let uid  = Firebase.Auth.auth().currentUser?.uid  else { return }
-        
         Firebase.Firestore.firestore().collection(FirebaseConstants.users).document(uid).getDocument { snapshot , err in
             if let error = err {
                 print("Faild To Fetch Current User \(error)")
@@ -85,8 +88,8 @@ class UserAccountManager: ObservableObject {
             }
             //MARK: DECODE A DATA
             // found user
-            
-            
+            self.username = data["username"] as! String
+            self.email = data["email"] as! String
         }
     }
     
@@ -111,12 +114,6 @@ class UserAccountManager: ObservableObject {
     
     
     
-    /// this function to sign out
-    func handleSignOut(){
-        isUserCurrentlyLoggedOut.toggle()
-        try? Firebase.Auth.auth().signOut()
-    }
-    
     
     
     
@@ -125,8 +122,7 @@ class UserAccountManager: ObservableObject {
     ///   - username: username of the user
     ///   - email: email of the user
     ///   - password: password of the user
-     func createNewAccount(username: String, email: String, password: String ) {
-        
+    func createNewAccount(username: String, email: String, password: String ) {
         Firebase.Auth.auth().createUser(withEmail: email, password: password) { result, err in
             if let err = err {
                 print("Failed to create user:", err)
@@ -152,19 +148,60 @@ class UserAccountManager: ObservableObject {
             if let err = err {
                 print(err)
                 self.errorAlert = true
-
+                
                 return
             }
             print("user information has been saved")
             Auth.auth().currentUser?.sendEmailVerification()
         }
-//        return true
+        //        return true
     }//store
     
     /// Function to send verification via email
     func emailVerification (){
         Auth.auth().currentUser?.sendEmailVerification()
     }
+    
+    
+    ///this function to  delete an account
+    /// - Warning the user need to have an ID
+    func handlDeleteAccount(){
+        guard let uid = Firebase.Auth.auth().currentUser?.uid else { return }
+        Firebase.Auth.auth().currentUser?.delete(completion: { error in
+            if let error = error {
+                // could not be deleted
+                print("cant delete")
+                
+            }else{
+                // log out
+                self.isUserCurrentlyLoggedOut.toggle()
+                
+            }
+        })
+    }
+    
+    func updateUserInformation()  {
+        guard let uid = Firebase.Auth.auth().currentUser?.uid else { return  }
+        let userData = ["email": email, "uid": uid, "username": username]
+        Firebase.Firestore.firestore().collection("users").document(uid).setData(userData){ [self] err in
+            if let err = err {
+                // could't save new information
+                print(err)
+                self.NotupdatedUserInfo = true
+                
+                return
+            }else{
+                Auth.auth().currentUser?.sendEmailVerification(beforeUpdatingEmail: email)
+                // user information has been saved
+                self.updatedUserInfo = true
+            }
+        }
+    }
+    
+    
+    
+    
+    
     
     
     

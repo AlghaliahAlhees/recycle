@@ -12,7 +12,7 @@ struct OrderScreen: View {
     // MARK: - Properties
     @State var goBack: Bool = false
 //    let index : Int = 0
-
+    @EnvironmentObject var RequestPickUpSystemVM : RequestPickUpManager
     //MARK: Body
     var body: some View {
         VStack{ //Start: VStack
@@ -27,12 +27,7 @@ struct OrderScreen: View {
                 
                 //MARK: - choose categorie
                 
-                CategoriesView()
-                
-                TimePickerView()
-                
-                
-                AdressView()
+                CategoriesView().environmentObject(RequestPickUpSystemVM)
                 
                 
             }
